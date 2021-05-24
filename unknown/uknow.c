@@ -11,7 +11,7 @@ int main ()
     int tamanho,i;
     char Diario[500];
     char senha[8];
-    char pass[8];
+    char pass[8]; 
     char passworld[20];
     
     
