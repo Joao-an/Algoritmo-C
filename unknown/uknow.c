@@ -8,11 +8,12 @@ int main ()
 {
     FILE *pont_arq;
     FILE *senha_arq;
-    int tamanho,i;
+    int tamanho,i,resultado=0;
+    int size_senha,size_diario,size_pass,size_passworld;
     char Diario[500];
-    char senha[8];
-    char pass[8]; 
-    char passworld[20];
+    char senha[10];
+    char pass[10]; 
+    char passworld[10];
     
     
     
@@ -27,7 +28,16 @@ int main ()
         printf("Favor digitar a senha: \n"); 
         scanf("%s",pass);
 
-        if ((pass[1]==senha[1])&(pass[2]==senha[2])&(pass[3]==senha[3])&(pass[4]==senha[4]))
+        tamanho=strlen(senha);
+        for (i=0; i<=tamanho;i++)
+        {
+            if (pass[i]==senha[i])
+            {
+                resultado++;
+            }
+        }
+        resultado--;
+        if (tamanho==resultado)
         {
             printf("Prazer Jhony, Seja bem vindo Novamente\n");
             pont_arq = fopen("Diario.txt", "a");
